@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+
+  <modelVersion>4.0.0</modelVersion>
+  <inceptionYear>2010</inceptionYear>
+  <groupId>com.github.rpc4j</groupId>
+  <artifactId>rpc4j</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0</version>
+
+  <properties>
+  </properties>
+
+  <modules>
+	<module>rpc4j-common</module>
+	<module>rpc4j-consumer</module>
+	<module>rpc4j-producer</module>
+	</modules>
+
+  <build>
+	<plugins>
+	  <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-compiler-plugin</artifactId>
+		<version>2.3.2</version> 
+		<configuration>
+		  <source>1.6</source>
+		  <target>1.6</target>
+		  <encoding>UTF8</encoding>
+		  <showDeprecation>true</showDeprecation>  
+		  <showWarnings>true</showWarnings>  
+		</configuration>
+	  </plugin>
+	
+	 
+
+	  <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-surefire-plugin</artifactId>
+		<version>2.3</version>
+		<configuration>
+		  <argLine>-Xms512m -Xmx1024m</argLine>
+		  <forkMode>always</forkMode>
+		  <includes>
+			<include>**/*Test.java</include>
+		  </includes>
+		</configuration>
+	  </plugin>
+
+	  <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-site-plugin</artifactId>
+		<configuration>
+		  <locales>zh_CN</locales>
+		  <outputEncoding>GBK</outputEncoding>
+		  <inputEncoding>GBK</inputEncoding>
+		</configuration>
+	  </plugin>
+
+	  <plugin> 
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-release-plugin</artifactId>
+		<version>2.1</version>
+		<configuration>
+		  <tagBase>http://www.xx.com/repos/metamorphosis/tags</tagBase>
+		</configuration>
+	  </plugin>
+	  
+	</plugins>
+
+	<resources>
+	  <resource>
+		<directory>src/main/resources</directory>
+		<filtering>true</filtering>
+	  </resource>
+	</resources>
+  </build>
+
+
+
+  
+</project>
